@@ -16,15 +16,24 @@ public class TopDownCharacter : MonoBehaviour
 
     [SerializeField]
     private Camera cam;
+    Rigidbody rb;
+    [SerializeField]
+    private float jumpForce;
+    [SerializeField]
+    private float jumpDelay = 0.1f;
+    private float timeStamp;
+    Vector3 movementVector;
 
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
+        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
         var targetVector = new Vector3(input.InputVector.x, 0, input.InputVector.y);
-        var movementVector = MoveTowardTarget(targetVector);
+        movementVector = MoveTowardTarget(targetVector);
+        CheckForJump();
 
         if (!rotateTowardMouse)
         {
@@ -33,6 +42,15 @@ public class TopDownCharacter : MonoBehaviour
         if (rotateTowardMouse)
         {
             RotateFromMouseVector();
+        }
+    }
+
+    private void CheckForJump()
+    {
+        if (input.grounded && input.Jump && timeStamp<=Time.time)
+        {
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            timeStamp = Time.time + jumpDelay;
         }
     }
 
