@@ -6947,7 +6947,7 @@ PrefabInstance:
     - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
       propertyPath: Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 667756973}
     - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
       propertyPath: target
       value: 
@@ -6971,7 +6971,7 @@ PrefabInstance:
     - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
       propertyPath: camTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2129582265}
     - target: {fileID: 1182459894261684666, guid: 60f66f992d0524847aba646e892608b4, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -8570,6 +8570,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2129582262}
+    - target: {fileID: 2170143713908379410, guid: 22b08911e61558e4e90c79012a31c884, type: 3}
+      propertyPath: dashDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170143713908379410, guid: 22b08911e61558e4e90c79012a31c884, type: 3}
+      propertyPath: dashForce
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2724984443191018755, guid: 22b08911e61558e4e90c79012a31c884, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8626,6 +8634,11 @@ PrefabInstance:
 --- !u!20 &2129582262 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2433939645173014308, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+  m_PrefabInstance: {fileID: 1648638069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2129582265 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8156185524027390546, guid: 60f66f992d0524847aba646e892608b4, type: 3}
   m_PrefabInstance: {fileID: 1648638069}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2140134275
