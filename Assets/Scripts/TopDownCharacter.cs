@@ -18,7 +18,7 @@ public class TopDownCharacter : MonoBehaviour
     private Camera cam;
     Rigidbody rb;
     [SerializeField]
-    private float jumpForce,dashForce,jumpDelay = 0.1f,dashDelay = 0.1f;
+    private float jumpForce,dashForce=35f,jumpDelay = 0.1f,dashDelay = 1f;
     private float jumpTimeStamp, dashTimeStamp;
     Vector3 movementVector;
 
