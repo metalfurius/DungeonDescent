@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public float playerHeight;
     public bool grounded;
     public bool Jump;
+    public bool Dash;
     
     private void Update() {
         if(Time.timeScale!=0){
@@ -23,6 +24,7 @@ public class PlayerInput : MonoBehaviour
         var h =Input.GetAxisRaw("Horizontal");
         var v =Input.GetAxisRaw("Vertical");
         Jump=Input.GetKey(KeyCode.Space);
+        Dash=Input.GetKey(KeyCode.LeftShift);
         InputVector=new Vector2(h,v);
     }
     private void GetMouse(){

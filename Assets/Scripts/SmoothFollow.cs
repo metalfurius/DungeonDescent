@@ -2,33 +2,25 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
-
-    public bool isCustomOffset;
-    public Vector3 offset;
-
-    public float smoothSpeed = 0.1f;
-
-    private void Start()
+    // camera will follow this object
+    public Transform Target;
+    //camera transform
+    public Transform camTransform;
+    // offset between camera and target
+    public Vector3 Offset;
+    // change this value to get desired smoothness
+    public float SmoothTime = 0.3f;
+ 
+    // This value will change at the runtime depending on target movement. Initialize with zero vector.
+    private Vector3 velocity = Vector3.zero;
+ 
+    private void Update()
     {
-        if (!isCustomOffset)
-        {
-            offset = transform.position - target.position;
-        }
-    }
-
-    private void LateUpdate()
-    {
-        SmoothFollow();   
-    }
-
-    public void SmoothFollow()
-    {
-        Vector3 targetPos = target.position + offset;
-        Vector3 smoothFollow = Vector3.Lerp(transform.position,
-        targetPos, smoothSpeed);
-
-        transform.position = smoothFollow;
-        transform.LookAt(target);
+        // update position
+        Vector3 targetPosition = Target.position + Offset;
+        camTransform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, SmoothTime);
+ 
+        // update rotation
+        transform.LookAt(Target);
     }
 }

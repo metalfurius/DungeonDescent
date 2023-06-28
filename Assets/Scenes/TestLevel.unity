@@ -828,6 +828,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 408112, guid: c6cb56b5c70f4f14ebf96689fda29f2c, type: 3}
   m_PrefabInstance: {fileID: 21977514}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &551525140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8156185524027390546, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+  m_PrefabInstance: {fileID: 2266577340508252576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &573364789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2184,9 +2189,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1291116808}
+    - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1291116808}
+    - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+      propertyPath: Offset.x
+      value: 13.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+      propertyPath: Offset.y
+      value: 10.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+      propertyPath: Offset.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+      propertyPath: SmoothTime
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 214886011420671350, guid: 60f66f992d0524847aba646e892608b4, type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 551525140}
     - target: {fileID: 1182459894261684666, guid: 60f66f992d0524847aba646e892608b4, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -2252,6 +2281,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 436057465}
+    - target: {fileID: 2170143713908379410, guid: 22b08911e61558e4e90c79012a31c884, type: 3}
+      propertyPath: dashDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170143713908379410, guid: 22b08911e61558e4e90c79012a31c884, type: 3}
+      propertyPath: dashForce
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2724984443191018755, guid: 22b08911e61558e4e90c79012a31c884, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -18,10 +18,8 @@ public class TopDownCharacter : MonoBehaviour
     private Camera cam;
     Rigidbody rb;
     [SerializeField]
-    private float jumpForce;
-    [SerializeField]
-    private float jumpDelay = 0.1f;
-    private float timeStamp;
+    private float jumpForce,dashForce,jumpDelay = 0.1f,dashDelay = 0.1f;
+    private float jumpTimeStamp, dashTimeStamp;
     Vector3 movementVector;
 
     private void Awake()
@@ -34,6 +32,7 @@ public class TopDownCharacter : MonoBehaviour
         var targetVector = new Vector3(input.InputVector.x, 0, input.InputVector.y);
         movementVector = MoveTowardTarget(targetVector);
         CheckForJump();
+        CheckForDash(movementVector);
 
         if (!rotateTowardMouse)
         {
@@ -47,10 +46,18 @@ public class TopDownCharacter : MonoBehaviour
 
     private void CheckForJump()
     {
-        if (input.grounded && input.Jump && timeStamp<=Time.time)
+        if (input.grounded && input.Jump && jumpTimeStamp <= Time.time)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-            timeStamp = Time.time + jumpDelay;
+            jumpTimeStamp = Time.time + jumpDelay;
+        }
+    }
+    private void CheckForDash(Vector3 movementVector)
+    {
+        if (input.Dash && dashTimeStamp <= Time.time)
+        {
+            rb.AddForce(movementVector * dashForce, ForceMode.Impulse);
+            dashTimeStamp = Time.time + dashDelay;
         }
     }
 
